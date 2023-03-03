@@ -3,6 +3,7 @@ import './App.css';
 import List from './Components/Lists';
 import './style/list.css';
 import './style/form.css';
+import './style/totalSummary.css';
 
 function App() {
   const [list, setList] = useState([]);
@@ -29,29 +30,29 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='total-summary'>
-          <div>IŠ VISO:</div>
-          <div>ESAMI:</div>
-          <div>PAŠALINTI:</div>
+          <div>
+            <div>IŠ VISO:</div>
+            <div>ESAMI:</div>
+            <div>PAŠALINTI:</div>
+          </div>
+
+          <div className='form'>
+            <input onChange={handleChange} type="text" placeholder='Enter Your Name' />
+            <button onClick={addUser}>Add</button>
+          </div>
+
+          <div className='list'>
+            <ul>
+              {list.map((user) => {
+                return <List
+                  userName={user.userName}
+                  id={user.id}
+                  deleteUser={deleteUser}
+                />
+              })}
+            </ul>
+          </div>
         </div>
-        <div className='form'>
-
-          <input onChange={handleChange} type="text" placeholder='Enter Your Name' />
-
-          <button onClick={addUser}>Add</button>
-
-        </div>
-        <div className='list'>
-          <ul>
-            {list.map((user) => {
-              return <List
-                userName={user.userName}
-                id={user.id}
-                deleteUser={deleteUser}
-              />
-            })}
-          </ul>
-        </div>
-
       </header>
     </div>
   );

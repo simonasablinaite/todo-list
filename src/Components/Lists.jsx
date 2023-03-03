@@ -2,7 +2,9 @@ function List(props) {
    return (
       <div>
          <li>{props.userName}
-            <button onClick={() => props.deleteUser(props.id)}>X</button>
+            <div>
+               <button className="btn-red" onClick={() => props.deleteUser(props.id)}>X</button>
+            </div>
          </li>
       </div>
    )

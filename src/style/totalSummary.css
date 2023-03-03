@@ -1,0 +1,14 @@
+.total-summary {
+  border-style: inset;
+  border-color: rgb(169, 192, 238);
+  padding: 10px;
+}
+.total-summary > div {
+  width: 280px;
+  height: 100%;
+
+  font-family: "Courier New", Courier, monospace;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 400;
+}

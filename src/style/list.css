@@ -1,8 +1,8 @@
 .list {
   border-style: inset;
-  width: 250px;
+  width: 260px;
   height: 100%;
-  border-color: steelblue;
+  border-color: rgb(169, 192, 238);
   margin-top: 20px;
   padding: 10px;
   font-family: cursive;
@@ -15,17 +15,16 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 0;
 }
 
 .list > ul > div > li {
+  display: flex;
   margin: 5px 0;
 }
 
-.list > ul > div > li > button {
-  margin-left: 40px;
+.btn-red {
   background: rgb(55, 17, 17);
   background: linear-gradient(
     90deg,
@@ -35,6 +34,7 @@
   );
   color: white;
   border: none;
-  width: 25px;
+  width: 50px;
   height: 25px;
+  margin-left: 100px;
 }

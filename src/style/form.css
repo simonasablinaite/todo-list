@@ -1,25 +1,29 @@
 .form {
   border-style: inset;
-  max-width: 400px;
+  width: 260px;
   height: 100%;
-  border-color: steelblue;
+  border-color: rgb(131, 156, 176);
   margin-top: 20px;
   padding: 10px;
 }
 
 .form > button {
+  width: 60px;
+  height: 25px;
+  border: none;
   margin-left: 20px;
-  background: rgb(37, 122, 223);
-  background: rgb(23, 78, 144);
-  background: radial-gradient(
-    circle,
-    rgba(23, 78, 144, 1) 0%,
-    rgba(32, 133, 172, 1) 49%,
-    rgba(22, 43, 61, 1) 100%
+  background: rgb(71, 120, 168);
+  background: linear-gradient(
+    156deg,
+    rgba(71, 120, 168, 1) 13%,
+    rgba(13, 178, 241, 1) 49%,
+    rgba(71, 120, 168, 1) 85%
   );
   color: white;
 }
 
 .form > input {
-  font-family: cursive;
+  font-family: "Courier New", Courier, monospace;
+  border: none;
+  padding: 5px;
 }
