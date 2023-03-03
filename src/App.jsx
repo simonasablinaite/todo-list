@@ -3,19 +3,22 @@ import './App.css';
 
 function App() {
   const [list, setList] = useState([]);
-  const [user, setUser] = useState('');
-  const [color, setColor] = useState('#000000');
+  const [newUser, setNewUser] = useState("");
 
-  const handleChangeUser = (event) => {
-    setUser(event.target.value);
-  };
-
-  const handleChangeColor = (event) => {
-    setColor(event.target.value);
+  const handleChange = (event) => {
+    setNewUser(event.target.value);
   };
 
   const addUser = () => {
-    setList([...list, `${user} ${color}`]);
+    const newList = [...list, newUser];
+    setList(newList);
+  };
+
+  const deleteUser = (userName) => {
+    const newList = list.filter((user) => {
+      return user !== userName;
+    });
+    setList(newList);
   }
 
   return (
@@ -29,22 +32,24 @@ function App() {
         <div className='form'>
 
           <label htmlFor="name">Enter Your Name</label>
-          <input onChange={handleChangeUser} type="text" />
-
-          <label htmlFor="color">Choose a Color</label>
-          <input onChange={handleChangeColor} type="color" />
+          <input onChange={handleChange} type="text" />
 
           <button onClick={addUser}>Add</button>
 
         </div>
         <div className='list'>
           <ul>
-            {list.map((u) => (
-              <li key={u.i} style={{ color: u.color }}>{u}</li>
-            ))}
+            {list.map((user) => {
+              return (
+                <div>
+                  <li>{user}
+                    <button onClick={() => deleteUser(user)}>X</button>
+                  </li>
+                </div>
+
+              )
+            })}
           </ul>
-
-
         </div>
 
       </header>
