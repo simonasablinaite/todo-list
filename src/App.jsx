@@ -10,15 +10,16 @@ function App() {
   };
 
   const addUser = () => {
-    const newList = [...list, newUser];
+    const person = {
+      id: list.length === 0 ? 1 : list[list.length - 1].id + 1,
+      userName: newUser,
+    }
+    const newList = [...list, person];
     setList(newList);
   };
 
-  const deleteUser = (userName) => {
-    const newList = list.filter((user) => {
-      return user !== userName;
-    });
-    setList(newList);
+  const deleteUser = (id) => {
+    setList(list.filter((user) => user.id !== id));
   }
 
   return (
@@ -42,8 +43,8 @@ function App() {
             {list.map((user) => {
               return (
                 <div>
-                  <li>{user}
-                    <button onClick={() => deleteUser(user)}>X</button>
+                  <li>{user.userName}
+                    <button onClick={() => deleteUser(user.id)}>X</button>
                   </li>
                 </div>
 
