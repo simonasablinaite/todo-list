@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import List from './Components/Lists';
 
 function App() {
   const [list, setList] = useState([]);
@@ -41,14 +42,11 @@ function App() {
         <div className='list'>
           <ul>
             {list.map((user) => {
-              return (
-                <div>
-                  <li>{user.userName}
-                    <button onClick={() => deleteUser(user.id)}>X</button>
-                  </li>
-                </div>
-
-              )
+              return <List
+                userName={user.userName}
+                id={user.id}
+                deleteUser={deleteUser}
+              />
             })}
           </ul>
         </div>
