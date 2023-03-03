@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import List from './Components/Lists';
+import './style/list.css';
+import './style/form.css';
 
 function App() {
   const [list, setList] = useState([]);
@@ -33,8 +35,7 @@ function App() {
         </div>
         <div className='form'>
 
-          <label htmlFor="name">Enter Your Name</label>
-          <input onChange={handleChange} type="text" />
+          <input onChange={handleChange} type="text" placeholder='Enter Your Name' />
 
           <button onClick={addUser}>Add</button>
 
