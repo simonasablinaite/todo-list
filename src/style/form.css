@@ -8,10 +8,10 @@
 }
 
 .form > button {
-  width: 60px;
+  margin-top: 10px;
+  width: 100px;
   height: 25px;
   border: none;
-  margin-left: 20px;
   background: rgb(71, 120, 168);
   background: linear-gradient(
     156deg,
@@ -26,4 +26,7 @@
   font-family: "Courier New", Courier, monospace;
   border: none;
   padding: 5px;
+}
+.form > input:nth-child(2) {
+  margin-left: 10px;
 }

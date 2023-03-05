@@ -8,9 +8,14 @@ import './style/totalSummary.css';
 function App() {
   const [list, setList] = useState([]);
   const [newUser, setNewUser] = useState("");
+  const [color, setColor] = useState('#000000');
 
-  const handleChange = (event) => {
+  const handleChangeUser = (event) => {
     setNewUser(event.target.value);
+  };
+
+  const handleChangeColor = (event) => {
+    setColor(event.target.value);
   };
 
   const addUser = () => {
@@ -37,7 +42,9 @@ function App() {
           </div>
 
           <div className='form'>
-            <input onChange={() => handleChange} type="text" placeholder='Enter Your Name' />
+            <input onChange={handleChangeUser} type="text" placeholder='Enter Your Name' />
+            <input onChange={handleChangeColor} type="color" />
+
             <button onClick={addUser}>Add</button>
           </div>
 
