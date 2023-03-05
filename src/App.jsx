@@ -37,7 +37,7 @@ function App() {
           </div>
 
           <div className='form'>
-            <input onChange={handleChange} type="text" placeholder='Enter Your Name' />
+            <input onChange={() => handleChange} type="text" placeholder='Enter Your Name' />
             <button onClick={addUser}>Add</button>
           </div>
 
