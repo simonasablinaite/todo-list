@@ -61,7 +61,7 @@ function App() {
                     userName={user.userName}
                     id={user.id}
                     deleteUser={deleteUser}
-                    color={color}
+                    color={user.userColor}
                   />
                 )
               })}
