@@ -22,6 +22,7 @@ function App() {
     const person = {
       id: list.length === 0 ? 1 : list[list.length - 1].id + 1,
       userName: newUser,
+      userColor: color,
     }
     const newList = [...list, person];
     setList(newList);
@@ -29,6 +30,10 @@ function App() {
 
   const deleteUser = (id) => {
     setList(list.filter((user) => user.id !== id));
+  }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
   }
 
   return (
@@ -41,21 +46,24 @@ function App() {
             <div>PAŠALINTI:</div>
           </div>
 
-          <div className='form'>
-            <input onChange={handleChangeUser} type="text" placeholder='Enter Your Name' />
-            <input onChange={handleChangeColor} type="color" />
+          <form onSubmit={submitHandler} className='form'>
+            <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
+            <input type="color" value={color} onChange={handleChangeColor} />
 
-            <button onClick={addUser}>Add</button>
-          </div>
+            <button onClick={addUser} type='submit'>Add</button>
+          </form>
 
           <div className='list'>
             <ul>
               {list.map((user) => {
-                return <List
-                  userName={user.userName}
-                  id={user.id}
-                  deleteUser={deleteUser}
-                />
+                return (
+                  <List
+                    userName={user.userName}
+                    id={user.id}
+                    deleteUser={deleteUser}
+                    color={color}
+                  />
+                )
               })}
             </ul>
           </div>
