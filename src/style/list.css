@@ -1,11 +1,12 @@
 .list {
   border-style: inset;
-  width: 260px;
-  height: 100%;
   border-color: rgb(169, 192, 238);
-  margin-top: 20px;
   padding: 10px;
-  font-family: cursive;
+  width: 280px;
+  height: 100%;
+  margin-top: 20px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  letter-spacing: 2px;
 }
 
 .list > ul {
@@ -14,14 +15,21 @@
   list-style: none;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: center;
-  align-items: flex-start;
   padding: 0;
+  align-content: space-around;
+}
+.list > ul > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .list > ul > div > li {
   display: flex;
   margin: 5px 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn-red {
@@ -36,5 +44,5 @@
   border: none;
   width: 50px;
   height: 25px;
-  margin-left: 100px;
+  margin-left: 20px;
 }

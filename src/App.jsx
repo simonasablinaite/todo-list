@@ -39,11 +39,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className='total-summary'>
-          <div>
-            <div>IŠ VISO:</div>
-            <div>ESAMI:</div>
-            <div>PAŠALINTI:</div>
+        <div className='container'>
+          <div className='total-summary'>
+            <div>
+              <div>IŠ VISO:</div>
+              <div>ESAMI:</div>
+              <div>PAŠALINTI:</div>
+            </div>
           </div>
 
           <form onSubmit={submitHandler} className='form'>
@@ -68,8 +70,8 @@ function App() {
             </ul>
           </div>
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
   );
 }
 
