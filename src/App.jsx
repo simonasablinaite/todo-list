@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import List from './Components/Lists';
 import './style/list.css';
@@ -30,11 +30,11 @@ function App() {
 
   const deleteUser = (id) => {
     setList(list.filter((user) => user.id !== id));
-  }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
-  }
+  };
 
   return (
     <div className="App">
