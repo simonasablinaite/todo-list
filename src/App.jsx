@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import List from './Components/Lists';
 import './style/list.css';
@@ -9,6 +9,9 @@ function App() {
   const [list, setList] = useState([]);
   const [newUser, setNewUser] = useState("");
   const [color, setColor] = useState('#000000');
+  const [allCount, setAllCount] = useState(0);
+  const [delCount, setDelCount] = useState(0);
+
 
   const handleChangeUser = (event) => {
     setNewUser(event.target.value);
@@ -26,15 +29,19 @@ function App() {
     }
     const newList = [...list, person];
     setList(newList);
+    setAllCount((count) => count + 1);
   };
+
 
   const deleteUser = (id) => {
     setList(list.filter((user) => user.id !== id));
+    setDelCount((count) => count + 1);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
   };
+
 
   return (
     <div className="App">
@@ -42,13 +49,13 @@ function App() {
         <div className='container'>
           <div className='total-summary'>
             <div>
-              <div>IŠ VISO:</div>
-              <div>ESAMI:</div>
-              <div>PAŠALINTI:</div>
+              <div>IŠ VISO: {allCount}</div>
+              <div>ESAMI: {allCount - delCount}</div>
+              <div>PAŠALINTI: {delCount}</div>
             </div>
           </div>
 
-          <form onSubmit={submitHandler} className='form'>
+          <form onSubmit={submitHandler} className='form' id='form'>
             <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
             <input type="color" value={color} onChange={handleChangeColor} />
 
