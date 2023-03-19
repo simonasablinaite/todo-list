@@ -12,7 +12,6 @@ function App() {
   const [allCount, setAllCount] = useState(0);
   const [delCount, setDelCount] = useState(0);
 
-
   const handleChangeUser = (event) => {
     setNewUser(event.target.value);
   };
@@ -32,7 +31,6 @@ function App() {
     setAllCount((count) => count + 1);
   };
 
-
   const deleteUser = (id) => {
     setList(list.filter((user) => user.id !== id));
     setDelCount((count) => count + 1);
@@ -41,7 +39,6 @@ function App() {
   const submitHandler = (event) => {
     event.preventDefault();
   };
-
 
   return (
     <div className="App">
@@ -54,14 +51,11 @@ function App() {
               <div>PAŠALINTI: {delCount}</div>
             </div>
           </div>
-
           <form onSubmit={submitHandler} className='form' id='form'>
             <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
             <input type="color" value={color} onChange={handleChangeColor} />
-
             <button onClick={addUser} type='submit'>Add</button>
           </form>
-
           <div className='list'>
             <ul>
               {list.map((user) => {
