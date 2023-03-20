@@ -42,8 +42,6 @@ function App() {
     setColor("#000000")
   };
 
-
-
   return (
     <div className="App">
       <header className="App-header">

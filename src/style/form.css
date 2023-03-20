@@ -22,7 +22,6 @@
   margin-top: 10px;
   width: 100px;
   height: 25px;
-  /* margin-right: 130px; */
   border: none;
   background: rgb(71, 120, 168);
   background: linear-gradient(
@@ -32,7 +31,6 @@
     rgba(71, 120, 168, 1) 85%
   );
   color: white;
-  float: left;
 }
 
 .form > input {
