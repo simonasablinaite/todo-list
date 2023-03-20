@@ -36,9 +36,13 @@ function App() {
     setDelCount((count) => count + 1);
   };
 
-  const submitHandler = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    setNewUser("");
+    setColor("#000000")
   };
+
+
 
   return (
     <div className="App">
@@ -51,7 +55,7 @@ function App() {
               <div>PAŠALINTI: {delCount}</div>
             </div>
           </div>
-          <form onSubmit={submitHandler} className='form' id='form'>
+          <form onSubmit={handleSubmit} className='form' id='form'>
             <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
             <input type="color" value={color} onChange={handleChangeColor} />
             <button onClick={addUser} type='submit'>Add</button>
