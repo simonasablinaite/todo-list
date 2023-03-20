@@ -60,7 +60,7 @@ function App() {
           </form>
           <div className='list'>
             <ul>
-              {list.map((user) => {
+              {list == "" ? "Empty list" : list.map((user) => {
                 return (
                   <List
                     userName={user.userName}
