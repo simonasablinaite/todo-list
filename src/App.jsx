@@ -55,6 +55,7 @@ function App() {
     } else {
       setList(JSON.parse(data))
     }
+    setNewUser('');
   }, []);
 
   return (
