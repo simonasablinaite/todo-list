@@ -14,4 +14,4 @@ function Lists({ userName, id, deleteUser, color }) {
    )
 }
 
-export default Lists
+export default Lists;

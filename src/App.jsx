@@ -28,7 +28,6 @@ function App() {
       userColor: color,
     }
     const newList = [...list, person];
-
     setList(newList);
     setAllCount((count) => count + 1);
   };

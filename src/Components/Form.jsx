@@ -14,4 +14,4 @@ function Form({ handleSubmit, newUser, handleChangeUser, color, handleChangeColo
    )
 }
 
-export default Form
+export default Form;
