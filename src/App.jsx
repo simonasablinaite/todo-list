@@ -4,6 +4,7 @@ import List from './Components/Lists';
 import './style/list.css';
 import './style/form.css';
 import './style/totalSummary.css';
+import Form from './Components/Form';
 
 function App() {
   const [list, setList] = useState([]);
@@ -69,13 +70,14 @@ function App() {
               <div>PAŠALINTI: {delCount}</div>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className='form' id='form'>
-            {/* <label htmlFor="text">Enter your name</label> */}
-            <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
-            {/* <label htmlFor="color">Select color</label> */}
-            <input type="color" value={color} onChange={handleChangeColor} />
-            <button onClick={addUser} type='submit'>Add</button>
-          </form>
+          <Form
+            handleSubmit={handleSubmit}
+            newUser={newUser}
+            handleChangeUser={handleChangeUser}
+            color={color}
+            handleChangeColor={handleChangeColor}
+            addUser={addUser}
+          />
           <div className='list'>
             <ul>
               {list.map((user) => {
