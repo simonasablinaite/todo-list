@@ -33,6 +33,11 @@
   color: white;
 }
 
+/* .form > label {
+  font-size: 14px;
+  font-family: "Saira Extra Condensed", sans-serif;
+} */
+
 .form > input {
   font-family: "Courier New", Courier, monospace;
   border: none;

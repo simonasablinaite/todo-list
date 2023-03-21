@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import List from './Components/Lists';
 import './style/list.css';
@@ -7,7 +7,7 @@ import './style/totalSummary.css';
 
 function App() {
   const [list, setList] = useState([]);
-  const [newUser, setNewUser] = useState("");
+  const [newUser, setNewUser] = useState({ user: "" });
   const [color, setColor] = useState('#000000');
   const [allCount, setAllCount] = useState(0);
   const [delCount, setDelCount] = useState(0);
@@ -27,6 +27,7 @@ function App() {
       userColor: color,
     }
     const newList = [...list, person];
+
     setList(newList);
     setAllCount((count) => count + 1);
   };
@@ -42,6 +43,20 @@ function App() {
     setColor("#000000")
   };
 
+  // LocalStorage:
+  useEffect(() => {
+    localStorage.setItem('user-name_key', JSON.stringify(list));
+  }, [list]);
+
+  useEffect(() => {
+    const data = localStorage.getItem('user-name_key');
+    if (data === null) {
+      setList({ userName: '', color: '#000000' });
+    } else {
+      setList(JSON.parse(data))
+    }
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -54,13 +69,15 @@ function App() {
             </div>
           </div>
           <form onSubmit={handleSubmit} className='form' id='form'>
+            {/* <label htmlFor="text">Enter your name</label> */}
             <input type="text" value={newUser} onChange={handleChangeUser} placeholder='Enter Your Name' />
+            {/* <label htmlFor="color">Select color</label> */}
             <input type="color" value={color} onChange={handleChangeColor} />
             <button onClick={addUser} type='submit'>Add</button>
           </form>
           <div className='list'>
             <ul>
-              {list == "" ? "Empty list" : list.map((user) => {
+              {list.map((user) => {
                 return (
                   <List
                     userName={user.userName}
